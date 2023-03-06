@@ -42,6 +42,11 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
     'managers',
+    'Rooms',
+    'Hotels',
+    'Reservations',
+
+
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True
