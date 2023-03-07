@@ -9,14 +9,14 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
+        ('Hotels', '0001_initial'),
         ('Rooms', '0001_initial'),
-        ('Reservations', '0001_initial'),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='reservation',
-            name='offer',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='room', to='Rooms.room'),
+            model_name='room',
+            name='hotel',
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='hotel_hotel', to='Hotels.hotel'),
         ),
     ]

@@ -29,15 +29,15 @@ def HotelsApi(request,id=0):
     
     elif request.method=='PUT':
         hotel_data = JSONParser().parse(request)
-        hotell=hotel.objects.get(id=hotel_data['id'])
-        hotel_serializer=HotelSerializer(hotell,data=hotel)
+        hotell=hotel.objects.get(manager=hotel_data['manager'])
+        hotel_serializer=HotelSerializer(hotell,data=hotel_data)
         if hotel_serializer.is_valid():
             hotel_serializer.save()
             return JsonResponse("Updated Successfully!!", safe=False)
         return JsonResponse("Failed to Update.", safe=False)
 
     elif request.method=='DELETE':
-        hotell=hotel.objects.get(id=id)
+        hotell=hotel.objects.get(manager=id)
         hotell.delete()
         return JsonResponse("Deleted Succeffully!!", safe=False)
 
