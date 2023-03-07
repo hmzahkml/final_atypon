@@ -1,0 +1,11 @@
+json for hotels
+
+
+{"manager":1,
+"name":"inter",
+"maxrooms": 69 ,
+"stars":5,
+"address":"aqaba jordan",
+"description": "cool hotel lol"
+
+}

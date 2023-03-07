@@ -12,9 +12,9 @@ class Room(models.Model):
       ('double', 'Double'),
       ('suite', 'Suite')
    )
-   RoomId = models.AutoField(primary_key=True)
+   RoomId = models.IntegerField(primary_key=True)
    number = models.IntegerField()
-   availabele = models.IntegerField()
+   available = models.IntegerField()
    type = models.CharField(max_length=10, choices=ROOM_TYPES)
    description = models.TextField(blank=True)
    price = models.DecimalField(max_digits=6, decimal_places=2)
