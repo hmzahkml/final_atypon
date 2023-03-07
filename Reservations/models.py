@@ -7,7 +7,7 @@ from Rooms.models import Room
 
 class reservation(models.Model):
 
-
+    reservationId = models.AutoField(primary_key=True)
     reserved_at = models.DateTimeField(auto_now_add=True)
     start_date = models.DateTimeField()
     offer = models.ForeignKey(Room, on_delete=models.CASCADE,related_name='room')
