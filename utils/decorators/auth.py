@@ -2,7 +2,7 @@ from django.core.exceptions import PermissionDenied
 
 def login_required(function):
     def wrapper(request, *args, **kwargs):
-        if request.user.is_authenticated():
+        if request.user.is_authenticated:
             return function(request, *args, **kwargs)
         return PermissionDenied
 

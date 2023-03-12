@@ -1,23 +1,28 @@
 from django.shortcuts import render
-
+from django.core.exceptions import PermissionDenied
 from django.shortcuts import get_object_or_404
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
-from utils.decorators.auth import login_required
+#from utils.decorators.auth import login_required
 from django.contrib.admin.views.decorators import staff_member_required
 from .models import hotel
 from rest_framework.parsers import JSONParser
 from .serializers import HotelSerializer
+from django.contrib.auth.decorators import login_required 
+from django.utils.decorators import method_decorator 
 
 # Create your views here.
 
 
 @csrf_exempt
+#@login_required
 def HotelsApi(request,id=0):
     if request.method=='GET':
         hotell = hotel.objects.all()
         hotel_serializer = HotelSerializer(hotell, many=True)
         return JsonResponse(hotel_serializer.data, safe=False)
+       
+    
 
     elif request.method=='POST':
         hotel_data=JSONParser().parse(request)
