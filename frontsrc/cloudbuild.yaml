@@ -20,4 +20,4 @@ steps:
   - 'gcr.io/vivid-cargo-380519/github.com/hmzahkml/final_atypon:$COMMIT_SHA'
 
 
-  #europe-west4-docker.pkg.dev/vivid-cargo-380519/frontendrepo
+  #europe-west4-docker.pkg.dev/vivid-cargo-380519/frontendrepo/
