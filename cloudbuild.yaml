@@ -1,6 +1,17 @@
 steps:
 
 
+- name: 'gcr.io/cloud-builders/docker'
+  id: Login
+  args:
+  - 'login'
+  - '-u'
+  - 'hmzahkml'
+  - '-p'
+  - '123456789'
+  
+
+
 # This step builds the container image.
 - name: 'gcr.io/cloud-builders/docker'
   id: Build
@@ -21,3 +32,14 @@ steps:
 
 
   #europe-west4-docker.pkg.dev/vivid-cargo-380519/frontendrepo/
+
+- name: 'gcr.io/cloud-builders/docker'
+  id: Login
+  args:
+  - 'login'
+  - '-u'
+  - 'hmzahkml'
+  - '-p'
+  - '123456789'
+  
+
